@@ -13,11 +13,13 @@ body {
   position: sticky;
   top: 0;
   z-index: 999;
+  border-bottom: 2px solid #111;
 }
 
 .logo {
-  font-size: 55px;
-  letter-spacing: 5px;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: 6px;
   margin: 0;
 }
 
@@ -27,24 +29,32 @@ body {
 
 .menu a {
   color: white;
-  margin: 0 15px;
+  margin: 0 18px;
   font-weight: bold;
   text-decoration: none;
+  font-size: 16px;
 }
 
+.menu a:hover {
+  color: #22c55e;
+}
+
+/* SEARCH */
 .search-area input {
-  margin-top: 15px;
+  margin-top: 18px;
   padding: 15px;
-  width: 80%;
-  max-width: 500px;
+  width: 85%;
+  max-width: 520px;
   border: none;
-  background: #222;
+  background: #181818;
   color: white;
+  font-size: 15px;
+  outline: none;
 }
 
 /* HERO */
 .hero {
-  height: 80vh;
+  height: 85vh;
   background: url("https://images.unsplash.com/photo-1520975958225-8d6e5a82b4b4?q=80&w=1600")
     center/cover;
   display: flex;
@@ -53,95 +63,208 @@ body {
 }
 
 .hero-text {
-  background: rgba(0,0,0,0.7);
-  padding: 50px;
+  background: rgba(0,0,0,0.75);
+  padding: 60px;
   text-align: center;
+  border: 1px solid #333;
 }
 
 .hero-text h2 {
-  font-size: 55px;
+  font-size: 60px;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #ddd;
 }
 
 .hero-text button {
-  padding: 15px 40px;
+  margin-top: 25px;
+  padding: 16px 45px;
   background: white;
   border: none;
   font-weight: bold;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.hero-text button:hover {
+  background: #22c55e;
+  color: white;
 }
 
 /* TITULOS */
 .titulo {
   text-align: center;
-  font-size: 40px;
-  margin: 60px 0 30px;
+  font-size: 45px;
+  margin: 70px 0 35px;
+  letter-spacing: 2px;
+}
+
+/* CATEGORIAS */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.cat {
+  background: #111;
+  border: 1px solid #333;
+  padding: 20px 35px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cat:hover {
+  border-color: #22c55e;
+  transform: scale(1.05);
 }
 
 /* PRODUTOS */
-.grid-produtos {
+.produtos {
   padding: 20px;
 }
 
 #lista {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: 1300px;
+  margin: auto;
 }
 
+/* CARD */
 .card {
   background: #111;
   border: 1px solid #333;
   padding: 15px;
   text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #22c55e;
 }
 
 .card img {
   width: 100%;
-  height: 260px;
+  height: 270px;
   object-fit: cover;
 }
 
 .card h3 {
-  margin: 15px 0;
+  margin: 18px 0 8px;
+  font-size: 18px;
+}
+
+.old {
+  color: #777;
+  text-decoration: line-through;
+  margin: 0;
 }
 
 .price {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
+  margin: 10px 0;
 }
 
 .card button {
-  padding: 12px;
+  padding: 14px;
   width: 100%;
+  background: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.card button:hover {
+  background: #22c55e;
+  color: white;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  margin-top: 90px;
+  background: #0d0d0d;
+  text-align: center;
+  padding: 70px 20px;
+  border-top: 2px solid #111;
+}
+
+.newsletter h2 {
+  font-size: 35px;
+}
+
+.newsletter p {
+  color: #aaa;
+  font-size: 18px;
+}
+
+.newsletter input {
+  padding: 15px;
+  width: 320px;
+  max-width: 80%;
+  margin-top: 20px;
+  border: none;
+  background: #222;
+  color: white;
+}
+
+.newsletter button {
+  padding: 15px 35px;
+  margin-top: 20px;
   background: white;
   border: none;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* LOJA */
-.loja-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  padding: 20px;
+.newsletter button:hover {
+  background: #22c55e;
+  color: white;
 }
 
-.loja-grid img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.texto {
-  text-align: center;
+/* CARRINHO */
+.finish {
+  padding: 18px 55px;
+  background: #22c55e;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
   font-size: 18px;
-  padding: 20px;
+}
+
+.success {
+  margin-top: 25px;
+  font-size: 20px;
+  color: #22c55e;
 }
 
 /* FOOTER */
 footer {
   background: black;
-  padding: 40px;
+  padding: 50px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 90px;
+  border-top: 2px solid #111;
+}
+
+footer h3 {
+  font-size: 30px;
+  margin: 0;
+}
+
+footer p {
+  color: #777;
+  margin-top: 10px;
 }
