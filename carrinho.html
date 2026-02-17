@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrinho | Perifa Grifes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="top-header">
+  <h1 class="logo">PERIFA GRIFES</h1>
+
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#produtos">Produtos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="carrinho.html">Carrinho</a>
+  </nav>
+</header>
+
+<section class="container" style="max-width:900px;margin:auto;padding:60px 20px;">
+  <h2 class="titulo">🛒 Seu Carrinho</h2>
+
+  <p style="text-align:center;font-size:18px;color:#ddd;">
+    Itens adicionados: <strong><span id="itens">0</span></strong>
+  </p>
+
+  <div style="text-align:center;margin-top:30px;">
+    <button class="finish" onclick="finalizar()">
+      Finalizar Compra
+    </button>
+  </div>
+
+  <p id="mensagem" class="success" style="text-align:center;"></p>
+</section>
+
+<footer>
+  <h3>PERIFA GRIFES</h3>
+  <p>Moda Masculina Urbana • Streetwear Premium</p>
+</footer>
+
+<script>
+  let total = localStorage.getItem("cart") || 0;
+  document.getElementById("itens").innerText = total;
+
+  function finalizar() {
+    if (total == 0) {
+      document.getElementById("mensagem").innerText =
+        "Seu carrinho está vazio.";
+    } else {
+      document.getElementById("mensagem").innerText =
+        "Pedido confirmado com sucesso!";
+      localStorage.setItem("cart", 0);
+      document.getElementById("itens").innerText = 0;
+    }
+  }
+</script>
+
+</body>
+</html>
