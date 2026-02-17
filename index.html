@@ -1,122 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Perifa Grifes | Loja Oficial</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Minha Loja</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <header>
+        <h2>Minha Loja</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="carrinho.html">Carrinho</a>
+        </nav>
+    </header>
 
-<header class="top-header">
-  <h1 class="logo">PERIFA GRIFES</h1>
+    <section class="hero">
+        <div>
+            <h1>Bem-vindo à Minha Loja</h1>
+            <p>Os melhores produtos, com preços incríveis!</p>
+            <button>Confira Agora</button>
+        </div>
+    </section>
 
-  <nav class="menu">
-    <a href="index.html">Home</a>
-    <a href="#categorias">Categorias</a>
-    <a href="#produtos">Produtos</a>
-    <a href="carrinho.html">Carrinho</a>
-    <a href="sobre.html">Sobre</a>
-  </nav>
+    <section class="products">
+        <div class="product-card">
+            <img src="produto1.jpg" alt="Produto 1">
+            <h3>Produto 1</h3>
+            <p>R$ 199,90</p>
+            <button>Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="produto2.jpg" alt="Produto 2">
+            <h3>Produto 2</h3>
+            <p>R$ 249,90</p>
+            <button>Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="produto3.jpg" alt="Produto 3">
+            <h3>Produto 3</h3>
+            <p>R$ 179,90</p>
+            <button>Comprar</button>
+        </div>
+    </section>
 
-  <div class="search-area">
-    <input type="text" placeholder="Buscar na Perifa Grifes...">
-  </div>
-</header>
-
-
-<section class="hero">
-  <div class="hero-text">
-    <h2>NOVA COLEÇÃO STREET 2026</h2>
-    <p>O estilo da quebrada com padrão premium.</p>
-    <button>Comprar agora</button>
-  </div>
-</section>
-
-
-<!-- CATEGORIAS -->
-<section id="categorias">
-  <h2 class="titulo">Categorias</h2>
-
-  <div class="categories">
-    <div class="cat">👟 Tênis</div>
-    <div class="cat">👕 Roupas</div>
-    <div class="cat">🧢 Acessórios</div>
-  </div>
-</section>
-
-
-<!-- PRODUTOS -->
-<section class="produtos" id="produtos">
-  <h2 class="titulo">🔥 Produtos em Alta</h2>
-
-  <div id="lista"></div>
-</section>
-
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <h2>Receba novidades exclusivas</h2>
-  <p>Promoções e lançamentos direto no seu email.</p>
-
-  <input type="email" placeholder="Digite seu email">
-  <button>Inscrever</button>
-</section>
-
-
-<footer>
-  <h3>PERIFA GRIFES</h3>
-  <p>Moda Masculina Urbana • Streetwear Premium</p>
-</footer>
-
-
-<script>
-  const produtos = [
-    ["Tênis Perifa Runner", "299,90", "399,90"],
-    ["Moletom Street Premium", "179,90", "249,90"],
-    ["Camiseta Oversized Black", "89,90", "129,90"],
-    ["Boné Snapback Urban", "69,90", "99,90"],
-    ["Calça Cargo Masculina", "149,90", "199,90"],
-    ["Jaqueta Techwear", "229,90", "299,90"],
-    ["Tênis High Street", "329,90", "449,90"],
-    ["Camisa Overshirt", "189,90", "239,90"],
-    ["Relógio Gold Perifa", "249,90", "349,90"],
-    ["Cinto Premium", "59,90", "89,90"],
-    ["Bermuda Street", "119,90", "169,90"],
-    ["Camiseta Verde Militar", "79,90", "109,90"],
-    ["Moletom Cinza", "159,90", "219,90"],
-    ["Tênis Casual White", "279,90", "399,90"],
-    ["Shorts Urban Preto", "89,90", "129,90"],
-    ["Jaqueta Jeans Street", "219,90", "299,90"],
-    ["Calça Slim Dark", "139,90", "189,90"],
-    ["Boné Perifa Classic", "74,90", "99,90"],
-    ["Blusa Manga Longa", "109,90", "149,90"],
-    ["Tênis Black Edition", "349,90", "499,90"]
-  ];
-
-  let html = "";
-
-  produtos.forEach((p) => {
-    html += `
-      <div class="card">
-        <img src="https://source.unsplash.com/500x500/?streetwear,clothes" alt="">
-        <h3>${p[0]}</h3>
-        <p class="old">R$ ${p[2]}</p>
-        <p class="price">R$ ${p[1]}</p>
-        <button onclick="addCart()">Adicionar</button>
-      </div>
-    `;
-  });
-
-  document.getElementById("lista").innerHTML = html;
-
-  function addCart() {
-    let cart = localStorage.getItem("cart") || 0;
-    cart++;
-    localStorage.setItem("cart", cart);
-    alert("Produto adicionado ao carrinho!");
-  }
-</script>
-
+    <footer>
+        &copy; 2026 Minha Loja. Todos os direitos reservados.
+    </footer>
 </body>
 </html>
