@@ -2,20 +2,20 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>PERIFA GRIFES | Loja Oficial</title>
+  <title>Perifa Grifes | Loja Oficial</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="top-header">
   <h1 class="logo">PERIFA GRIFES</h1>
 
   <nav class="menu">
     <a href="index.html">Home</a>
+    <a href="#categorias">Categorias</a>
     <a href="#produtos">Produtos</a>
-    <a href="#loja">Loja Física</a>
+    <a href="carrinho.html">Carrinho</a>
     <a href="sobre.html">Sobre</a>
   </nav>
 
@@ -25,92 +25,97 @@
 </header>
 
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h2>STREETWEAR MASCULINO DE VERDADE</h2>
-    <p>Estilo urbano, qualidade premium e presença forte.</p>
-    <button>Ver coleção</button>
+    <h2>NOVA COLEÇÃO STREET 2026</h2>
+    <p>O estilo da quebrada com padrão premium.</p>
+    <button>Comprar agora</button>
+  </div>
+</section>
+
+
+<!-- CATEGORIAS -->
+<section id="categorias">
+  <h2 class="titulo">Categorias</h2>
+
+  <div class="categories">
+    <div class="cat">👟 Tênis</div>
+    <div class="cat">👕 Roupas</div>
+    <div class="cat">🧢 Acessórios</div>
   </div>
 </section>
 
 
 <!-- PRODUTOS -->
 <section class="produtos" id="produtos">
-  <h2 class="titulo">🔥 Destaques da Semana</h2>
+  <h2 class="titulo">🔥 Produtos em Alta</h2>
 
-  <div class="grid-produtos">
-
-    <!-- 20 PRODUTOS -->
-    <script>
-      const produtos = [
-        ["Camiseta Oversized Black", "89,90"],
-        ["Moletom Street Premium", "179,90"],
-        ["Tênis Perifa Runner", "299,90"],
-        ["Boné Snapback Urban", "69,90"],
-        ["Calça Cargo Masculina", "149,90"],
-        ["Jaqueta Corta Vento", "199,90"],
-        ["Camisa Street Branca", "99,90"],
-        ["Bermuda Techwear", "119,90"],
-        ["Relógio Masculino Gold", "249,90"],
-        ["Cinto Perifa Style", "59,90"],
-        ["Tênis High Street", "329,90"],
-        ["Moletom Capuz Cinza", "159,90"],
-        ["Camiseta Verde Militar", "79,90"],
-        ["Shorts Urban Preto", "89,90"],
-        ["Jaqueta Jeans Street", "219,90"],
-        ["Calça Slim Dark", "139,90"],
-        ["Boné Perifa Classic", "74,90"],
-        ["Tênis Casual White", "279,90"],
-        ["Camisa Overshirt", "189,90"],
-        ["Blusa Manga Longa", "109,90"]
-      ];
-    </script>
-
-    <!-- PRODUTOS GERADOS -->
-    <div id="lista"></div>
-  </div>
+  <div id="lista"></div>
 </section>
 
 
-<!-- LOJA FÍSICA -->
-<section class="loja" id="loja">
-  <h2 class="titulo">🏬 Nossa Loja Física</h2>
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>Receba novidades exclusivas</h2>
+  <p>Promoções e lançamentos direto no seu email.</p>
 
-  <div class="loja-grid">
-    <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?q=80&w=900">
-    <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=900">
-  </div>
-
-  <p class="texto">
-    Um espaço pensado para quem vive o streetwear.  
-    Venha conhecer a experiência PERIFA GRIFES.
-  </p>
+  <input type="email" placeholder="Digite seu email">
+  <button>Inscrever</button>
 </section>
 
 
-<!-- FOOTER -->
 <footer>
   <h3>PERIFA GRIFES</h3>
   <p>Moda Masculina Urbana • Streetwear Premium</p>
 </footer>
 
 
-<!-- SCRIPT PRODUTOS -->
 <script>
+  const produtos = [
+    ["Tênis Perifa Runner", "299,90", "399,90"],
+    ["Moletom Street Premium", "179,90", "249,90"],
+    ["Camiseta Oversized Black", "89,90", "129,90"],
+    ["Boné Snapback Urban", "69,90", "99,90"],
+    ["Calça Cargo Masculina", "149,90", "199,90"],
+    ["Jaqueta Techwear", "229,90", "299,90"],
+    ["Tênis High Street", "329,90", "449,90"],
+    ["Camisa Overshirt", "189,90", "239,90"],
+    ["Relógio Gold Perifa", "249,90", "349,90"],
+    ["Cinto Premium", "59,90", "89,90"],
+    ["Bermuda Street", "119,90", "169,90"],
+    ["Camiseta Verde Militar", "79,90", "109,90"],
+    ["Moletom Cinza", "159,90", "219,90"],
+    ["Tênis Casual White", "279,90", "399,90"],
+    ["Shorts Urban Preto", "89,90", "129,90"],
+    ["Jaqueta Jeans Street", "219,90", "299,90"],
+    ["Calça Slim Dark", "139,90", "189,90"],
+    ["Boné Perifa Classic", "74,90", "99,90"],
+    ["Blusa Manga Longa", "109,90", "149,90"],
+    ["Tênis Black Edition", "349,90", "499,90"]
+  ];
+
   let html = "";
+
   produtos.forEach((p) => {
     html += `
       <div class="card">
-        <img src="https://source.unsplash.com/400x400/?streetwear,clothes" alt="">
+        <img src="https://source.unsplash.com/500x500/?streetwear,clothes" alt="">
         <h3>${p[0]}</h3>
+        <p class="old">R$ ${p[2]}</p>
         <p class="price">R$ ${p[1]}</p>
-        <button>Adicionar ao carrinho</button>
+        <button onclick="addCart()">Adicionar</button>
       </div>
     `;
   });
 
   document.getElementById("lista").innerHTML = html;
+
+  function addCart() {
+    let cart = localStorage.getItem("cart") || 0;
+    cart++;
+    localStorage.setItem("cart", cart);
+    alert("Produto adicionado ao carrinho!");
+  }
 </script>
 
 </body>
